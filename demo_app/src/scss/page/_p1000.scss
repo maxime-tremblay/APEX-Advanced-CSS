@@ -1,0 +1,52 @@
+/* ***********************************
+ * Page 1000 Specific Styles
+ * Button with sliding icon on hover
+ * *********************************** */
+$namespace: page-1000;
+
+.#{$namespace} {
+    $icon-width: 16px;
+    $icon-margin: 4px;
+
+    .t-Button--slideAnim {
+       .t-Button--icon {
+          .t-Icon {
+             transition: all .2s;
+             opacity: 0;
+          }
+
+          &:hover .t-Icon {
+             opacity: 1;
+          }
+
+          .t-Button-label {
+             transition: all .2s;
+             display: inline-block;
+          }
+
+          &.t-Button--iconLeft .t-Icon {
+             transform: translateX(-($icon-width + $icon-margin));
+          }
+
+          &.t-Button--iconRight .t-Icon {
+             transform: translateX(($icon-width + $icon-margin));
+          }
+
+          &.t-Button--iconLeft .t-Button-label {
+             transform: translateX(-($icon-width + $icon-margin)/2);
+          }
+
+          &.t-Button--iconRight .t-Button-label {
+             transform: translateX(($icon-width + $icon-margin)/2);
+          }
+
+          &.t-Button--iconLeft:hover,
+          &.t-Button--iconRight:hover{
+             .t-Icon,
+             .t-Button-label {
+                transform: none;
+             }
+          }
+       }
+    }
+}

@@ -1,0 +1,51 @@
+/* ***********************************
+ * Page 1100 Specific Styles
+ * Cards Animation
+ * *********************************** */
+$namespace: page-1100;
+
+.#{$namespace} {
+    .cards--animZoomIn {
+        .t-Cards {
+            .t-Cards-item {
+                opacity: 0;
+
+                @include animation('animZoomIn .5s cubic-bezier(.25,.1,.25,1) 0s 1 forwards');
+
+                /* Animation delay on the cards */
+                @for $i from 1 through 30 {
+                    $initialDelay : 0;
+                    $subsequentDelay : 0.1;
+
+                    &:nth-child(#{$i}) {
+                        animation-delay: #{$i*$subsequentDelay + $initialDelay}s;
+                    }
+                }
+
+                .t-Card {
+                    transform: scale(.90);
+
+                    &:hover {
+                        transform: scale(1.05);
+
+                        .t-Card-icon {
+                            background-color: #78909C;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /* Animation */
+    @include keyframes(animZoomIn) {
+        0% {
+            transform: scale(0);
+            opacity: 0;
+        }
+        100% {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+}

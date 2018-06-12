@@ -1,0 +1,27 @@
+/* ***********************************
+ * Page 1 Specific Styles
+ * Home Page
+ * *********************************** */
+$namespace: page-1;
+
+.#{$namespace} {
+    .t-Body-contentInner {
+        @extend %display-flex;
+
+        & > .container {
+            @extend %display-flex;
+
+            & > .row {
+                @extend %display-flex;
+            }
+        }
+    }
+
+    .region-home-layout {
+        align-self: center;
+    }
+
+    .home-logo {
+        max-width: 60vw;
+    }
+}

@@ -1,0 +1,75 @@
+/* ***********************************
+ * Page 1300 Specific Styles
+ * Carousel Animation
+ * *********************************** */
+$namespace: page-1300;
+
+.#{$namespace} {
+    .dm-ColorBlock {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex: 1;
+        font-size: 14px;
+        text-align: center;
+        padding: 16px;
+
+        h3 {
+            font-size: 16px;
+            line-height: 1.5;
+            margin: 12px 0 24px;
+        }
+        .a-Icon {
+            display: block;
+            margin: 24px auto 0;
+            width: 32px;
+            height: 32px;
+
+            &:before{
+                font-size: 32px;
+            }
+        }
+    }
+
+    .icon-template-region:before {
+        content: "\e06e";
+    }
+
+    /* Carousel Progress */
+    %carousel-progress {
+        content: "";
+        height: 5px;
+        background-color:#E57373;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        transition: width linear;
+
+        &.a-Tabs-element-selected{
+            width: 100%;
+        }
+    }
+
+    .t-Region--showCarouselProgress {
+        &.js-cycle5s .a-Region-carouselItem:before {
+            @extend %carousel-progress;
+            transition-duration: 5s;
+        }
+
+        &.js-cycle10s .a-Region-carouselItem:before {
+            @extend %carousel-progress;
+            transition-duration: 10s;
+        }
+
+        &.js-cycle15s .a-Region-carouselItem:before {
+            @extend %carousel-progress;
+            transition-duration: 15s;
+        }
+
+        &.js-cycle20s .a-Region-carouselItem:before {
+            @extend %carousel-progress;
+            transition-duration: 20s;
+        }
+    }
+}

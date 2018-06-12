@@ -1,0 +1,72 @@
+/* Navigation Menu & Bar - Hover Animation */
+.t-Button--navBar:hover .t-Icon.a-Icon,
+.t-Button--navBar:hover .t-Icon.fa,
+.t-TreeNav .a-TreeView-node--topLevel .a-TreeView-content:hover .a-Icon,
+.t-TreeNav .a-TreeView-node--topLevel .a-TreeView-content:hover .fa,
+.t-NavigationBar-menu .a-Menu-content .a-Menu-item:hover .a-Icon,
+.t-NavigationBar-menu .a-Menu-content .a-Menu-item:hover .fa {
+  -webkit-animation: tada 2s linear infinite;
+  animation: tada 2s linear infinite;
+  color: #26cbff;
+}
+
+/* Navigation Menu - Active Animation */
+.t-TreeNav .a-TreeView-node--topLevel .a-TreeView-content.is-selected .fa,
+.t-TreeNav .a-TreeView-node--topLevel .a-TreeView-content.is-selected .a-Icon {
+  -webkit-animation: pulse 2s linear infinite;
+  animation: pulse 2s linear infinite;
+  color: #26cbff;
+}
+
+/* Navigation Menu - Fixes the submenu icon height */
+.t-TreeNav .a-TreeView-node--topLevel .a-TreeView-node .fa {
+    line-height: 32px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+/*
+ * Expand navigation menu entry with ellipsis
+ */
+.t-TreeNav .a-TreeView-node--topLevel {
+   .a-TreeView-row.is-hover {
+      background-color: none !important; /* important required to override UT's default property */
+   }
+
+   .a-TreeView-row {
+      transition: none;
+   }
+}
+
+/* Remove the child entry padding bottom so that we don't highlight the parent when
+   hovering the padding between the last child and the next menu entry */
+.t-TreeNav .a-TreeView-node--topLevel>ul {
+   padding: 8px 0 0 0;
+
+   /* Add the padding that was removed above */
+   &>.a-TreeView-node:last-child {
+     padding-bottom: 8px;
+   }
+}
+
+.t-TreeNav .a-TreeView-node--topLevel,
+.t-TreeNav .a-TreeView-node--leaf {
+   .a-TreeView-content.is-hover .a-TreeView-label{
+      position: fixed;
+      width: auto;
+      padding-right: 16px;
+
+      background-color: #d9d9d9; /* This would be your primary color */
+      z-index: 2; /* Make it appear on top of the Toggle icon */
+   }
+}
+
+.t-TreeNav .a-TreeView-node--leaf .a-TreeView-content.is-hover .a-TreeView-label {
+   padding-top: 0;
+   padding-bottom: 0;
+}
+
+.apex-side-nav .t-Body-nav,
+.apex-side-nav .t-Body-nav .t-TreeNav {
+   z-index: 500; /* Make it appear on top of the page content */
+}

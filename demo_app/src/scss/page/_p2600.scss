@@ -1,0 +1,71 @@
+/* ***********************************
+ * Page 2600 Specific Styles
+ * Cards Hover Animation
+ * *********************************** */
+$namespace: page-2600;
+
+.#{$namespace} {
+    $color-overdue: #EF9A9A;
+    $color-pending: #ffa726;
+    $color-completed: #4AAA2C;
+
+    .cards--hoverAnimation {
+        .t-Card-icon {
+            transform: translateY(10px);
+            transition: all 1s;
+        }
+
+        .t-Card-titleWrap {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s;
+        }
+
+        .t-Card-wrap:before {
+            height: 20px;
+            top: -14px;
+            left: 0;
+            width: 100px;
+            position: absolute;
+            transform: none;
+            opacity: 0;
+            transition: all 1s 0.5s;
+        }
+
+        .t-Card--overdue .t-Card-wrap:before {
+            content: "";
+            background-color: $color-overdue;
+            border: 1px solid darken(#B71C1C, 20%);
+        }
+
+        .t-Card--pending .t-Card-wrap:before {
+            content: "";
+            background-color: $color-pending;
+            border: 1px solid darken(#B71C1C, 20%);
+        }
+
+        .t-Card--completed .t-Card-wrap:before {
+            content: "";
+            background-color: $color-completed;
+            border: 1px solid darken($color-completed, 20%);
+        }
+
+        .t-Card:hover {
+            .t-Card-icon,
+            .t-Card-titleWrap {
+                transform: none;
+            }
+
+            .t-Card-titleWrap,
+            .t-Card-wrap:before {
+                opacity: 1;
+            }
+
+            .t-Card-wrap:before {
+                top: 15px;
+                left: -25px;
+                transform: rotateZ(-45deg);
+            }
+        }
+    }
+}

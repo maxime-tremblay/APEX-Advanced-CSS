@@ -1,0 +1,48 @@
+/* ***********************************
+ * Page 2300 Specific Styles
+ * Equal Height Region
+ * *********************************** */
+$namespace: page-2300;
+
+.#{$namespace} {
+    .t-Region--flexContainer {
+        & > .container {
+            & > .row {
+                @extend %display-flex;
+
+                & > .col {
+                    @extend %display-flex;
+
+                    & > .t-Region {
+                        flex: 1 1 auto;
+                    }
+                }
+            }
+        }
+    }
+
+    .t-Region--flexBody {
+        @extend %display-flex;
+        flex-direction: column;
+
+        .t-Region-bodyWrap{
+            @extend %display-flex;
+            flex: 1 1 auto;
+
+            .t-Region-body{
+                @extend %display-flex;
+                flex-direction: column;
+
+                &.t-Region--justifyStart {
+                    justify-content: flex-start;
+                }
+                &.t-Region--justifyCenter {
+                    justify-content: center;
+                }
+                &.t-Region--justifyEnd {
+                    justify-content: flex-end;
+                }
+            }
+        }
+    }
+}

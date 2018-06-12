@@ -1,0 +1,102 @@
+$burger-height: 32px;
+$burger-width: 32px;
+$icon-height: 16px;
+$icon-width: 16px;
+$line-heigth: 1px;
+
+%burger-line {
+    position: absolute;
+    left: 0px;
+    width: $icon-width;
+    height: $line-heigth;
+    background-color: lightgray;
+    transition: all 0.5s;
+}
+
+%burger-line-pseudo {
+    position: absolute;
+    content: ""; //remove the Font APEX icon content
+    left: 0;
+    right: 0;
+    height: $line-heigth;
+    background-color: lightgray;
+    transition: all 0.5s;
+    font-family: inherit!important; //override the Font APEX property
+    font-size: 16px!important; //override the Font APEX property
+}
+
+.t-Burger--close .t-Header-controls .t-Button--headerTree {
+    height: $burger-height;
+    width: $burger-width;
+
+    .t-Icon.fa.fa-bars {
+        @extend %burger-line;
+        top: 4px;
+        margin: 8px;
+
+        &:before {
+            @extend %burger-line-pseudo;
+            top: 4px;
+        }
+        &:after {
+            @extend %burger-line-pseudo;
+            top: 8px;
+            overflow:visible;
+        }
+    }
+}
+
+.t-Burger--close.js-navExpanded .t-Header-controls .t-Button--headerTree {
+    .t-Icon.fa.fa-bars {
+        //move 4px down so that the bar is vertically centered
+        transform: translateY(4px) rotate(45deg);
+
+        &:before {
+            opacity: 0;
+        }
+        &:after {
+            //move 4px (+ another 4px since the container was moved down) up so that the bar is vertically centered
+            transform: translateY(-8px) rotate(-90deg);
+        }
+    }
+}
+
+.t-Burger--arrow .t-Header-controls .t-Button--headerTree {
+    height: $burger-height;
+    width: $burger-width;
+
+    .t-Icon.fa.fa-bars {
+        @extend %burger-line;
+        top: 8px;
+        margin: 8px;
+
+        &:before {
+            @extend %burger-line-pseudo;
+            top: -4px;
+        }
+        &:after {
+            @extend %burger-line-pseudo;
+            top: 4px;
+            overflow:visible;
+        }
+    }
+}
+
+.t-Burger--arrow.js-navExpanded .t-Header-controls .t-Button--headerTree {
+    .t-Icon.fa.fa-bars {
+        //move 4px down so that the bar is vertically centered
+
+
+        &:before {
+            transform: translateY(4px) rotate(-45deg);
+            transform-origin: left;
+            width: $icon-width/2;
+        }
+        &:after {
+            //move 4px (+ another 4px since the container was moved down) up so that the bar is vertically centered
+            transform: translateY(-4px) rotate(45deg);
+            transform-origin: left;
+            width: $icon-width/2;
+        }
+    }
+}

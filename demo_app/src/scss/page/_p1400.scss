@@ -1,0 +1,36 @@
+/* ***********************************
+ * Page 1400 Specific Styles
+ * Region in Navbar
+ * *********************************** */
+$namespace: page-1400;
+
+.#{$namespace} {
+    .t-TreeNav {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+
+        ul {
+            flex: 1 0 auto;
+        }
+
+        .underNavBar {
+            flex: 0 0 auto;
+
+            .t-Region-body {
+                padding: 10px;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+            }
+        }
+    }
+
+    .apex-side-nav.js-navCollapsed .underNavBar .t-Region-body {
+        flex-direction: column;
+
+        .fa {
+            font-size: 20px!important
+        }
+    }
+}

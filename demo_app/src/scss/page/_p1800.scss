@@ -1,0 +1,120 @@
+/* ***********************************
+ * Page 1800 Specific Styles
+ * Device Specific Style
+ * *********************************** */
+$namespace: page-1800;
+
+.#{$namespace} {
+    .bd-content>table {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 1rem;
+        overflow-y: auto
+    }
+
+    .bd-content>table>tbody>tr>td,
+    .bd-content>table>tbody>tr>th,
+    .bd-content>table>tfoot>tr>td,
+    .bd-content>table>tfoot>tr>th,
+    .bd-content>table>thead>tr>td,
+    .bd-content>table>thead>tr>th {
+        padding: .75rem;
+        vertical-align: top;
+        border: 1px solid #eceeef
+    }
+
+    .bd-content>table>tbody>tr>td>p:last-child,
+    .bd-content>table>tbody>tr>th>p:last-child,
+    .bd-content>table>tfoot>tr>td>p:last-child,
+    .bd-content>table>tfoot>tr>th>p:last-child,
+    .bd-content>table>thead>tr>td>p:last-child,
+    .bd-content>table>thead>tr>th>p:last-child {
+        margin-bottom: 0
+    }
+
+    .bd-content>table td:first-child>code {
+        white-space: nowrap
+    }
+
+    .responsive-utilities th small {
+        display: block;
+        font-weight: 400;
+        color: #999
+    }
+
+    .responsive-utilities tbody th {
+        font-weight: 400
+    }
+
+    .responsive-utilities td {
+        text-align: center
+    }
+
+    .responsive-utilities .is-visible {
+        color: #468847;
+        background-color: #dff0d8!important
+    }
+
+    .responsive-utilities .is-hidden {
+        color: #ccc;
+        background-color: #f9f9f9!important
+    }
+
+    .responsive-utilities-test {
+        margin-top: .25rem
+    }
+
+    .responsive-utilities-test .col-6 {
+        margin-top: .5rem;
+        margin-bottom: .5rem
+    }
+
+    .responsive-utilities-test span {
+        display: block;
+        padding: 1rem .5rem;
+        font-size: 1rem;
+        font-weight: 700;
+        line-height: 1.1;
+        text-align: center;
+        border-radius: .25rem
+    }
+
+
+    hr {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        border: 0;
+        border-top: 1px solid rgba(0,0,0,.1);
+        box-sizing: content-box;
+        height: 0;
+        overflow: visible;
+    }
+
+    .table-bordered {
+      border-collapse: collapse;
+    }
+
+    .responsive-utilities-test span {
+        display: block;
+        padding: 1rem .5rem;
+        font-size: 2rem;
+        font-weight: 700;
+        line-height: 1.1;
+        text-align: center;
+        border-radius: .25rem;
+    }
+
+    .visible {
+        color: #468847;
+        background-color: #dff0d8;
+        border: 1px solid #d6e9c6;
+    }
+
+    .not-visible {
+        color: #999;
+        border: 1px solid #ddd;
+    }
+
+    
+}

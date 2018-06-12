@@ -1,0 +1,63 @@
+/* ***********************************
+ * Page 2500 Specific Styles
+ * Responsive Table
+ * *********************************** */
+$namespace: page-2500;
+
+.#{$namespace} {
+    /* Change Odd Rows' Color */
+    .t-Report--altRowsDefault .t-Report-report tr:nth-child(odd) .t-Report-cell,
+    .a-IRR-table tr:nth-child(odd) td {
+        background-color: #f4fcff;
+    }
+
+
+
+    @media screen and (max-width: 767px) {
+        .t-Report--responsive {
+            /* Hide Classic Report Header */
+            .t-Report-report thead {
+                display: none;
+            }
+
+            /* Hide IR Header */
+            .t-fht-thead {
+                display: none;
+
+                &.js-stickyTableHeader + .js-stickyWidget-placeholder {
+                    display: none;
+                }
+            }
+
+            /* IR background color - Same as body to emphasis line separator  */
+            .a-IRR-table {
+                background-color: #f5f5f5;
+            }
+
+            .t-Report-report, .a-IRR-table {
+                tr {
+                    border-bottom: 3px solid #e6e6e6;
+                    display: block;
+                    margin-bottom: .625em;
+                }
+
+                td {
+                    display: block;
+                    text-align: left !important;
+                    border-bottom: none;
+                    border-left: none;
+                    border-right: none;
+                    display: flex;
+
+
+                    &:before {
+                        content: attr(headers);
+                        font-weight: bold;
+                        margin-right: 1em;
+                        min-width: 30%;
+                    }
+                }
+            }
+        }
+    }
+}

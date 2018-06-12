@@ -1,0 +1,45 @@
+/* ***********************************
+ * Page 2200 Specific Styles
+ * Report Icon with Flexbox
+ * *********************************** */
+$namespace: page-2200;
+
+.#{$namespace} {
+    .comment .fa {
+        float: right;
+    }
+
+    .report-icon-right .comment .fa,
+    .report-icon-left .comment .fa{
+        float: none;
+    }
+
+    .report-icon-left {
+        .comment {
+            display: flex;
+
+            .fa {
+                align-self: center;
+                padding-right: 4px;
+                flex: 0 0 auto;
+            }
+        }
+    }
+
+    .report-icon-right {
+        .comment {
+            display: flex;
+
+            .fa {
+                align-self: center;
+                padding-left: 4px;
+                flex: 0 0 auto;
+                order: 1;
+            }
+
+            div {
+                flex: 1 1 auto;
+            }
+        }
+    }
+}

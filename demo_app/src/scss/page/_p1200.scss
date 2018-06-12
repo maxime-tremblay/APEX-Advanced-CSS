@@ -1,0 +1,28 @@
+/* ***********************************
+ * Page 1200 Specific Styles
+ * Cards Flexbox - Display Title Before
+ * *********************************** */
+$namespace: page-1200;
+
+.#{$namespace} {
+    .cards--title-first {
+        .t-Cards {
+            .t-Card-wrap {
+                display: flex;
+                flex-direction: column;
+            }
+
+            &.t-Cards--hideBody .t-Card {
+                .t-Card-icon {
+                    margin: 0 auto 24px;
+                }
+
+                .t-Card-titleWrap {
+                    padding-top: 25px;
+                    padding-bottom: 12px;
+                    order: -1;
+                }
+            }
+        }
+    }
+}
