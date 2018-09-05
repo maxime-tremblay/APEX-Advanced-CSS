@@ -1,10 +1,96 @@
 .t-PageBody--login {
+    $color-from: hsl(23, 100%, 50%);
+    $color-to: hsl(104, 50%, 40%);
+
+    //Gradient Background
     &.t-PageBody--backgroundGradient{
-        background: #50608a; /* fallback for old browsers */
-        background: -webkit-linear-gradient(to bottom right, #50608a, #f1f1f1); /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(to bottom right, #50608a, #f1f1f1); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        background: $color-from; /* fallback for old browsers */
+        background: linear-gradient(60deg, $color-from, $color-to);
     }
 
+    .grid{
+        display: none;
+    }
+
+    //CSS Grid Background
+    &.t-PageBody--backgroundGrid{
+        .grid {
+            position: absolute;
+            top:0;
+            right:0;
+            bottom:0;
+            left:0;
+            z-index: -1;
+            display: grid;
+            grid-template-columns: repeat(16, 1fr);
+            grid-template-rows: repeat(9, 1fr);
+            grid-gap: 10px;
+            padding: 20px;
+            background: linear-gradient(60deg, $color-from, $color-to);
+        }
+        
+        .grid__item {
+            grid-column: var(--colStart, 1) / span var(--span, 3);
+            grid-row: var(--rowStart, 1) / span var(--span, 3);
+            border: 4px solid rgba(0, 0, 0, 0.5);
+            mix-blend-mode: soft-light;
+        }
+        
+        .grid__item:nth-child(even) {
+            filter: blur(var(--blur, 0px));
+        }
+        
+        .grid__item:nth-child(1) {
+            --colStart: 14;
+            --rowStart: 5;
+            --span: 2;
+            --blur: 1;
+        }
+        
+         .grid__item:nth-child(2) {
+            --colStart: 9;
+            --rowStart: 8;
+            --span: 2;
+            --blur: 9;
+        }
+        
+         .grid__item:nth-child(3) {
+            --colStart: 2;
+            --rowStart: 2;
+            --span: 6;
+            --blur: 3;
+        }
+        
+         .grid__item:nth-child(4) {
+            --colStart: 4;
+            --rowStart: 4;
+            --span: 2;
+            --blur: 1;
+        }
+        
+         .grid__item:nth-child(5) {
+            --colStart: 1;
+            --rowStart: 4;
+            --span: 4;
+            --blur: 8;
+        }
+        
+         .grid__item:nth-child(6) {
+            --colStart: 4;
+            --rowStart: 3;
+            --span: 6;
+            --blur: 5;
+        }
+        
+         .grid__item:nth-child(7) {
+            --colStart: 11;
+            --rowStart: 1;
+            --span: 5;
+            --blur: 2;
+        }
+    }
+
+    //Image Background
     &.t-PageBody--backgroundImage{
         background: transparent;
 
@@ -17,10 +103,12 @@
             width: 100%;
             content: "";
         }
+        //adds a transparent white layer above the image
         &:before {
-            background: rgba(255,255,255,.6);
+            background: rgba(255,255,255,.5);
             z-index: -1;
         }
+        //background image
         &:after {
             background: url('../images/login-bg.jpg');
             background-size: cover;
@@ -41,8 +129,11 @@
     }
 
     .t-Login-logo {
-        background-image: url('../images/kscope18-logo.png');
+        //background-image: url('../images/css3-logo.png');
+        background-image: url('../images/code_icon.png');
         background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
     }
 }
 

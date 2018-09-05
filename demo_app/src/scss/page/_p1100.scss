@@ -22,12 +22,13 @@ $namespace: page-1100;
                     }
                 }
 
-                .t-Card {
+                &:not(:first-child) .t-Card {
                     transform: scale(.90);
 
                     &:hover {
                         transform: scale(1.05);
-
+                        box-shadow: 0 8px 17px 0 rgba(0,0,0,.2), 0 6px 20px 0 rgba(0,0,0,.19);
+                        
                         .t-Card-icon {
                             background-color: #78909C;
                         }

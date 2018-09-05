@@ -1,37 +1,53 @@
-<a name="top"></a>
-# Kscope18 - Advanced CSS Techniques to Make Your Applications Look Even Better
+# Advanced CSS Techniques to Make Your Applications Look Even Better
 
-Kscope18 Presentation
+## Kscope18
+[Demo Application](https://apex.oracle.com/pls/otn/f?p=43179)
+[Presentation](./Maxime%20Tremblay%20-%20Kscope18%20-%20Advanced%20CSS%20Techniques.pdf)
 
-Demo Application
-https://apex.oracle.com/pls/otn/f?p=43179
-
+## AUSOUG
+[Demo Application](https://apex.oracle.com/pls/otn/f?p=43179)
+[Presentation](./Maxime%20Tremblay%20-%20AUSOUG%20-%20Advanced%20CSS%20Techniques.pdf)
 
 ---
 **NOTE**
 
-All CSS is SASS based and is available under the src directory.
+All CSS is Sass based and is available under the src directory.
 
 ---
 
-<a name="table-of-contents"></a>
-## Table of contents
+## Links
+[CSS Zen Garden](http://www.csszengarden.com)
 
-  - [Media Queries](#media_queries)
-  - [Animation](#animation)
-  - [Flexbox](#flexbox)
-  - [Other CSS Tips and Tricks](#other)
+[LESS](http://lesscss.org/)
 
-<a name="media_queries"></a>
-## Media Queries
+[Sass](https://sass-lang.com/)
+
+[caniuse](caniuse.com)
+
+[Autoprefixer](https://autoprefixer.github.io/)
+
+[APEX Nitro](https://github.com/OraOpenSource/apex-nitro)
+
+### Animation Libraries
+[animate.css](https://daneden.github.io/animate.css/)
+
+[Font Awesome Animation](http://l-lin.github.io/font-awesome-animation/)
+(Also work with Font APEX)
+
+[animapex](https://animapex.com)
+
+[Hover.css](https://ianlunn.github.io/Hover/)
+
+
+## Demo Application
+### Media Queries
 
   - Dialog Size
   - Print Stylesheet
   - Device Specific Elements
   - Responsive Table
 
-<a name="animation"></a>
-## Animation
+### Animation
 
   - Cards Display Animation
   - Cards Hove Animation
@@ -42,17 +58,15 @@ All CSS is SASS based and is available under the src directory.
   - Overlay Side Menu
   - Navigation Menu Icon
 
-<a name="flexbox"></a>
-## Flexbox
+### Flexbox
 
+  - Flexbox Basis
   - Cards Flexbox
   - Region in Navbar
   - Report Icon Position
   - Equal Height Columns
-  
 
-<a name="other"></a>
-## Other CSS Tips and Tricks
+### Other CSS Tips and Tricks
 
   - Show Complete Navigation Entry Label
   

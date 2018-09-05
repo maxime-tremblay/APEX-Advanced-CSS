@@ -1,4 +1,19 @@
-$header-image-width: 100px;
+$image-src: '' !default;
+$image-width: 0px !default;
+$image-height: 0px !default;
+
+@if $is-kscope18 == true {
+    $image-src: '../images/Kscope18/header.png';
+    $image-width: 685px;
+    $image-height: 211px;
+}
+@else if $is-ausoug == true  {
+    $image-src: '../images/AUSOUG/header.png';
+    $image-width: 240px;
+    $image-height: 80px;
+}
+
+$header-image-width: $image-width * $header-height / $image-height;
 
 /* Header - Adds image befoer application title */
 .t-Header-logo-link > span {
@@ -8,7 +23,7 @@ $header-image-width: 100px;
 .t-Header-logo-link > span:before {
     position: absolute;
     content: "";
-    background: url('../images/kscope18-header.png');
+    background: url($image-src);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;

@@ -4,6 +4,21 @@
  * *********************************** */
 $namespace: page-1;
 
+$image-src: '' !default;
+$image-width: 0px !default;
+$image-height: 0px !default;
+
+@if $is-kscope18 == true {
+    $image-src: '../images/Kscope18/logo.png';
+    $image-width: 685px;
+    $image-height: 263px;
+}
+@else if $is-ausoug == true  {
+    $image-src: '../images/AUSOUG/logo.png';
+    $image-width: 400px;
+    $image-height: 400px;
+}
+
 .#{$namespace} {
     .t-Body-contentInner {
         @extend %display-flex;
@@ -18,10 +33,18 @@ $namespace: page-1;
     }
 
     .region-home-layout {
-        align-self: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .home-logo {
+        background: url($image-src);
+        width: $image-width;
+        height: $image-height;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
         max-width: 60vw;
     }
 }
