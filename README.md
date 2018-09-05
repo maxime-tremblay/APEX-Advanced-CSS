@@ -2,10 +2,12 @@
 
 ## Kscope18
 [Demo Application](https://apex.oracle.com/pls/otn/f?p=43179)
+
 [Presentation](./Maxime%20Tremblay%20-%20Kscope18%20-%20Advanced%20CSS%20Techniques.pdf)
 
 ## AUSOUG
-[Demo Application](https://apex.oracle.com/pls/otn/f?p=43179)
+[Demo Application](https://apex.oracle.com/pls/otn/f?p=55038)
+
 [Presentation](./Maxime%20Tremblay%20-%20AUSOUG%20-%20Advanced%20CSS%20Techniques.pdf)
 
 ---
