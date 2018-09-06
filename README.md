@@ -30,6 +30,8 @@ All CSS is Sass based and is available under the src directory.
 
 [APEX Nitro](https://github.com/OraOpenSource/apex-nitro)
 
+[cubic-bezier timing function](http://cubic-bezier.com/)
+
 ### Animation Libraries
 [animate.css](https://daneden.github.io/animate.css/)
 
