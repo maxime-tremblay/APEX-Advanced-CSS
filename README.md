@@ -10,7 +10,7 @@
 
 [Presentation](./Maxime%20Tremblay%20-%20AUSOUG%20-%20Advanced%20CSS%20Techniques.pdf)
 
-[Recording] (https://attendee.gotowebinar.com/recording/3215281355662426626)
+[Recording](https://attendee.gotowebinar.com/recording/3215281355662426626)
 
 ---
 **NOTE**
