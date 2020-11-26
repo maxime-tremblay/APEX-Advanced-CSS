@@ -2,49 +2,56 @@
  * Page 1 Specific Styles
  * Home Page
  * *********************************** */
-$namespace: page-1;
+ $namespace: page-1;
 
-$image-src: '' !default;
-$image-width: 0px !default;
-$image-height: 0px !default;
-
-@if $is-kscope18 == true {
-    $image-src: '../images/Kscope18/logo.png';
-    $image-width: 685px;
-    $image-height: 263px;
-}
-@else if $is-ausoug == true  {
-    $image-src: '../images/AUSOUG/logo.png';
-    $image-width: 400px;
-    $image-height: 400px;
-}
-
-.#{$namespace} {
-    .t-Body-contentInner {
-        @extend %display-flex;
-
-        & > .container {
-            @extend %display-flex;
-
-            & > .row {
-                @extend %display-flex;
-            }
-        }
-    }
-
-    .region-home-layout {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .home-logo {
-        background: url($image-src);
-        width: $image-width;
-        height: $image-height;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
-        max-width: 60vw;
-    }
-}
+ .#{$namespace} {
+     .t-Body-contentInner {
+         @extend %display-flex;
+ 
+         & > .container {
+             @extend %display-flex;
+ 
+             & > .row {
+                 @extend %display-flex;
+ 
+                 & > .col {
+                     @extend %display-flex;
+                 }
+             }
+         }
+     }
+ 
+     .region-home-layout {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         justify-content: center;
+         min-height: calc(100vh - #{$header-height} - 73px - 32px);
+                     /* header 48px, footer 73px, 16px padding top and bottom */
+     }
+ 
+     .home-logo {
+         display: none;
+     }
+     
+     .home-title{
+         font-size: 7rem;
+         line-height: 8rem;
+         text-shadow: 0 1px 0 #ccc, 
+                         0 2px 0 #c9c9c9,
+                         0 3px 0 #bbb,
+                         0 4px 0 #b9b9b9,
+                         0 5px 0 #aaa,
+                         0 6px 1px rgba(0,0,0,.1),
+                         0 0 5px rgba(0,0,0,.1),
+                         0 1px 3px rgba(0,0,0,.3),
+                         0 3px 5px rgba(0,0,0,.2),
+                         0 5px 10px rgba(0,0,0,.25),
+                         0 10px 10px rgba(0,0,0,.2),
+                         0 20px 20px rgba(0,0,0,.15);
+     }
+ 
+     .home-subtitle {
+         margin-top: 10rem;
+     }
+ }

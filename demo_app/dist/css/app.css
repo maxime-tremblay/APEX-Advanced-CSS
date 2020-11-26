@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /* Base */
-.page-1 .t-Body-contentInner, .page-1 .t-Body-contentInner > .container, .page-1 .t-Body-contentInner > .container > .row, .page-2300 .t-Region--flexContainer > .container > .row, .page-2300 .t-Region--flexContainer > .container > .row > .col, .page-2300 .t-Region--flexBody, .page-2300 .t-Region--flexBody .t-Region-bodyWrap, .page-2300 .t-Region--flexBody .t-Region-bodyWrap .t-Region-body {
+.page-1 .t-Body-contentInner, .page-1 .t-Body-contentInner > .container, .page-1 .t-Body-contentInner > .container > .row, .page-1 .t-Body-contentInner > .container > .row > .col, .page-2300 .t-Region--flexContainer > .container > .row, .page-2300 .t-Region--flexContainer > .container > .row > .col, .page-2300 .t-Region--flexBody, .page-2300 .t-Region--flexBody .t-Region-bodyWrap, .page-2300 .t-Region--flexBody .t-Region-bodyWrap .t-Region-body {
   display: flex; }
 
 /* Components */
@@ -76,38 +76,42 @@
 /* ==========================================================================
    Responsive Utility Classes
    ---
-   xs  <=640px
-   sm  640px - 767px
-   md  768px - 1199px
+   xxs  <=640px
+   xs  641px - 767px
+   sm  768px - 991px
+   md  992px - 1199px
    lg  >=  1200px
    ========================================================================== */
-/* xs Classes */
-.hidden-xs-up {
+/* CSS From UT */
+.hidden-lg-down,
+.hidden-xxs-up {
   display: none !important; }
 
 @media (max-width: 640px) {
-  .hidden-xs-down {
+  .hidden-xxs-down {
     display: none !important; } }
 
-@media (max-width: 640px) {
-  .hidden-xs-only {
-    display: none !important; } }
-
-/* sm Classes */
-@media (min-width: 641px) {
-  .hidden-sm-up {
+@media (min-width: 1200px) {
+  .hidden-lg-up {
     display: none !important; } }
 
 @media (max-width: 767px) {
+  .hidden-xs-down {
+    display: none !important; } }
+
+@media (min-width: 641px) {
+  .hidden-xs-up {
+    display: none !important; } }
+
+@media (min-width: 768px) {
+  .hidden-sm-up {
+    display: none !important; } }
+
+@media (max-width: 991px) {
   .hidden-sm-down {
     display: none !important; } }
 
-@media (min-width: 641px) and (max-width: 767px) {
-  .hidden-sm-only {
-    display: none !important; } }
-
-/* md Classes */
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .hidden-md-up {
     display: none !important; } }
 
@@ -115,27 +119,11 @@
   .hidden-md-down {
     display: none !important; } }
 
-@media (min-width: 768px) and (max-width: 1199px) {
-  .hidden-md-only {
-    display: none !important; } }
-
-/* lg Classes */
-@media (min-width: 1200px) {
-  .hidden-lg-up {
-    display: none !important; } }
-
-.hidden-lg-down {
-  display: none !important; }
-
-@media (min-width: 1200px) {
-  .hidden-lg-only {
-    display: none !important; } }
-
 /* Layouts */
 .t-PageBody--login.t-PageBody--backgroundGradient {
-  background: #ff6200;
+  background: #dcaa35;
   /* fallback for old browsers */
-  background: linear-gradient(60deg, #ff6200, #4e9933); }
+  background: linear-gradient(60deg, #dcaa35, #f4da6b); }
 
 .t-PageBody--login .grid {
   display: none; }
@@ -152,7 +140,7 @@
   grid-template-rows: repeat(9, 1fr);
   grid-gap: 10px;
   padding: 20px;
-  background: linear-gradient(60deg, #ff6200, #4e9933); }
+  background: linear-gradient(60deg, #dcaa35, #f4da6b); }
 
 .t-PageBody--login.t-PageBody--backgroundGrid .grid__item {
   grid-column: var(--colStart, 1)/span var(--span, 3);
@@ -337,12 +325,12 @@
     left: 0;
     content: "";
     z-index: -1;
-    background-color: #d9d9d9;
+    background-color: #0f0f0f;
     /* This would be your primary color */ }
   .t-TreeNav .a-TreeView-node--topLevel .a-TreeView-content.is-hover .a-TreeView-label.is-focused:after,
   .t-TreeNav .a-TreeView-node--leaf .a-TreeView-content.is-hover .a-TreeView-label.is-focused:after {
-    border-top: 1px solid #505f6d;
-    border-bottom: 1px solid #505f6d; }
+    border-top: 1px solid #0f0f0f;
+    border-bottom: 1px solid #0f0f0f; }
 
 .t-TreeNav .a-TreeView-node--leaf .a-TreeView-content.is-hover .a-TreeView-label {
   padding-top: 0;
@@ -700,23 +688,13 @@
 .overlaySideMenu.overlaySideMenu--fullscreen .t-Body-nav {
   width: 100vw; }
 
-/* Header - Adds image befoer application title */
-.t-Header-logo-link > span {
-  padding-left: 159px;
-  /* Move title to the right so that it's not under the image */ }
-
-.t-Header-logo-link > span:before {
-  position: absolute;
-  content: "";
-  background: url("../images/AUSOUG/header.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  width: 144px;
-  margin-left: -154px;
-  /* Move the image to the left so that it's not on top of the text and add some extra margin so that there is space between the image and text */
-  top: 0;
-  bottom: 0; }
+.t-Header {
+  /* Add rounded border to the header image */
+  /* Add some shadow effect to the application's title */ }
+  .t-Header .apex-logo-img {
+    border-radius: 25%; }
+  .t-Header .apex-logo-text {
+    text-shadow: 0px 3px 0px #b2a98f, 0px 14px 10px rgba(0, 0, 0, 0.15), 0px 24px 2px rgba(0, 0, 0, 0.1), 0px 34px 30px rgba(0, 0, 0, 0.1); }
 
 .t-Footer .t-Footer-body {
   display: flex;
@@ -772,11 +750,6 @@
   animation: slide-up 2s 0s linear infinite;
   opacity: 0; }
 
-/* Apex 5.1 Hide Screen Reader and Customize Links */
-footer .t-Footer-customize,
-footer .t-Footer-srMode {
-  display: none; }
-
 /* Vendor */
 /* Page Specific */
 /* ***********************************
@@ -785,17 +758,22 @@ footer .t-Footer-srMode {
  * *********************************** */
 .page-1 .region-home-layout {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  min-height: calc(100vh - 48px - 73px - 32px);
+  /* header 48px, footer 73px, 16px padding top and bottom */ }
 
 .page-1 .home-logo {
-  background: url("../images/AUSOUG/logo.png");
-  width: 400px;
-  height: 400px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  max-width: 60vw; }
+  display: none; }
+
+.page-1 .home-title {
+  font-size: 7rem;
+  line-height: 8rem;
+  text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15); }
+
+.page-1 .home-subtitle {
+  margin-top: 10rem; }
 
 /* ***********************************
  * Page 101 Specific Styles
@@ -803,7 +781,13 @@ footer .t-Footer-srMode {
  * *********************************** */
 .page-101 .t-Region--loginWrapper {
   position: relative;
-  height: 500px; }
+  height: 500px;
+  min-width: 460px; }
+  .page-101 .t-Region--loginWrapper .t-Login-region {
+    background-color: #ffffff;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    box-shadow: 0 3px 9px -2px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.075); }
   .page-101 .t-Region--loginWrapper .t-Region--login {
     position: absolute;
     z-index: 21;

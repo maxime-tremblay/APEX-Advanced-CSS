@@ -50,9 +50,3 @@
     @include animation('slide-up 2s 0s linear infinite');
     opacity: 0;
 }
-
-/* Apex 5.1 Hide Screen Reader and Customize Links */
-footer .t-Footer-customize,
-footer .t-Footer-srMode {
-    display: none;
-}
